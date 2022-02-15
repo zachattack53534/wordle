@@ -105,7 +105,10 @@ for j in range(6):
             elif repeat == 1:
                 l = guess[i].upper()
                 k = keyboard1.index(l)
-                keyboard[k] = grey.format(l) + reset.format("")
+                if keyboard[k] == green.format(l) + reset.format("") or keyboard[k] == blue.format(l) + reset.format(""):
+                    pass
+                else:
+                    keyboard[k] = grey.format(l) + reset.format("")
                 display = display + reset.format("") + grey.format(" " + guess[i] + " ") + reset.format("") + black.format("|") + reset.format("")
                 try:
                     letters_allowed.remove(guess[i] + ", ")
