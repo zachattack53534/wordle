@@ -6,7 +6,7 @@ import nltk
 from nltk.corpus import words
 
 #Text files 
-text_file = open("wordle.txt", "r")
+text_file = open("answers.txt", "r")
 text_file1 = open("5-letter-dict.txt", "r")
 
 #Colours
