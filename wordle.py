@@ -11,7 +11,7 @@ text_file1 = open("5-letter-dict.txt", "r")
 
 #Colours
 green = "\033[0;30;42m{}"
-blue = "\033[0;30;46m{}"
+yellow = "\033[0;30;41m{}"
 grey = "\033[0;30;47m{}"
 reset = "\033[0;30;0m{}"
 black = "\u001b[0;30;40m{}"
@@ -105,13 +105,13 @@ for j in range(6):
                 if keyboard[k] == green.format(l) + reset.format(""):
                     pass
                 else:
-                    keyboard[k] = blue.format(l) + reset.format("")
+                    keyboard[k] = yellow.format(l) + reset.format("")
                 letters.append(guess[i])
-                display = display + reset.format("") + blue.format(" " + guess[i] + " ") + reset.format("") + black.format("|") + reset.format("")
+                display = display + reset.format("") + yellow.format(" " + guess[i] + " ") + reset.format("") + black.format("|") + reset.format("")
             elif repeat == 1:
                 l = guess[i].upper()
                 k = keyboard1.index(l)
-                if keyboard[k] == green.format(l) + reset.format("") or keyboard[k] == blue.format(l) + reset.format(""):
+                if keyboard[k] == green.format(l) + reset.format("") or keyboard[k] == yellow.format(l) + reset.format(""):
                     pass
                 else:
                     keyboard[k] = grey.format(l) + reset.format("")
