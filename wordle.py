@@ -5,7 +5,7 @@ import random
 import nltk
 from nltk.corpus import words
 
-#Text Files
+#Text files 
 text_file = open("wordle.txt", "r")
 text_file1 = open("5-letter-dict.txt", "r")
 
@@ -41,6 +41,7 @@ display = ""
 letters = []
 keyboard = list("|Q|W|E|R|T|Y|U|I|O|P|\n |A|S|D|F|G|H|J|K|L| \n  |Z|X|C|V|B|N|M|    ")
 keyboard1 = list("|Q|W|E|R|T|Y|U|I|O|P|\n |A|S|D|F|G|H|J|K|L| \n  |Z|X|C|V|B|N|M|    ")
+error = ""
 
 #Randomly chosen word
 word = random_words[random.randint(0, len(random_words) - 1)]
@@ -50,8 +51,10 @@ score = 0
 
 #GUI
 def GUI():
-    for i in range(100):
+    for i in range(50):
         print()
+    print("{}".format(error))
+    print()
     print("{:^21}".format("WORDLE"))
     print(black.format("-" * 21) + reset.format(""))
     for i in range(len(guesses)):
@@ -71,16 +74,19 @@ for j in range(6):
     score = 0
     display = ""
     while True:
-        guess = input("Please make a guess: ")
-        guess.lower()
-        verified = word_list.count(guess)
-        if len(guess) == 5 and verified >= 1: break
-        elif len(guess) != 5: 
+        try:
+            guess = input("Please make a guess: ")
+            guess.lower()
+            verified = word_list.count(guess)
+            if len(guess) == 5 and verified >= 1: break
+            elif len(guess) != 5: 
+                error = "Please enter a 5 letter word!"
+            elif verified == 0: 
+                error = "Word does not exist!"
             GUI()
-            print("Please enter a 5 letter word!")
-        elif verified == 0: 
+        except:
+            error = "There was an error with your input!"
             GUI()
-            print("Word does not exist!")
     for repeat in range(2):
         for i in range(5):
             ok = word.count(guess[i])
