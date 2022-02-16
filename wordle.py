@@ -74,6 +74,7 @@ for j in range(6):
     score = 0
     display = ""
     while True:
+        error = ""
         try:
             guess = input("Please make a guess: ")
             guess.lower()
@@ -127,4 +128,5 @@ for j in range(6):
 
 
 if score <= 4:
-    print("The word was:", word)
+    error = "The word was " + word
+    GUI()
