@@ -1,11 +1,9 @@
 #Imports
 import random
-import nltk
-from nltk.corpus import words
 
 #Text files 
 text_file = open("answers.txt", "r")
-text_file1 = open("5-letter-dict.txt", "r")
+text_file1 = open("dict.txt", "r")
 
 #Colours
 green = "\033[0;30;42m{}"
@@ -26,10 +24,6 @@ while True:
     b = text_file1.readline()
     if not b: break
     word_list.append(b[0:5])
-full_word_list = words.words()
-for i in range(len(full_word_list)):
-    if len(full_word_list[i]) == 5:
-        word_list.append(full_word_list[i])
 
 #Guess list
 guesses = []
@@ -49,7 +43,7 @@ score = 0
 
 #GUI
 def GUI():
-    for i in range(50):
+    for i in range(75):
         print()
     print("{}".format(error))
     print()
