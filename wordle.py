@@ -7,7 +7,7 @@ text_file1 = open("dict.txt", "r")
 
 #Colours
 green = "\033[0;30;42m{}"
-yellow = "\033[0;30;41m{}"
+yellow = "\033[0;30;43m{}"
 grey = "\033[0;30;47m{}"
 reset = "\033[0;30;0m{}"
 black = "\u001b[0;30;40m{}"
